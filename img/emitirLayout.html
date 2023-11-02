@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RD</title>
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="style/style.css">
+    </head>
+<body>
+    <div id="layout">
+        <div class="div-controle">
+            <!-- Conteúdo da div controle -->
+            <div id="data"></div>
+            <div class="checkbox-container">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="terceirizado"> Terceirizado
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="normal"> Normal
+                </label>  
+            </div>
+                       
+            <!-- Início do formulário -->
+            <form id="meuFormulario" method="post" action="seu_script_php.php"> <!-- Substitua "seu_script_php.php" pelo URL do seu script PHP -->
+                <input type="text" id="nomeCliente" name="nomeCliente" oninput="exibirTexto()" placeholder="Nome do Cliente">
+                
+                <div id="esquerda" onpaste="pasteImage(event)" tabindex="0">
+                    <img id="icon-img" src="img/icon_img.svg"><br>
+                    Cole o layout aqui
+                </div>
+                <div class="dropdown-container">
+                    <label for="artefinalSelect"></label>
+                    <select id="artefinalSelect" name="artefinalSelect" class="rotated">
+                        <option value="Paulo">Paulo</option>
+                        <option value="Henrique">Henrique</option>
+                        <option value="João M">João M</option>
+                        <option value="Henrique">Matheus</option>
+                        <option value="">Riquinho</option>
+                        <option value="">Rony</option>
+                    </select>
+                </div>
+
+                <!-- Adicione um botão de envio -->
+                <div class="button-container">
+                    <input type="submit" value="Enviar" id="botaoEnviar">
+                    <a href="layoutsGerados.html" class="layouts-button">Layouts</a>
+                </div>
+                
+
+            </form> <!-- Fim do formulário -->
+        </div>
+
+        <div class="div-producao">
+            <!-- Conteúdo da div produção -->
+            <div id="dataProdu"></div>
+            <div class="checkbox-container">
+                <label class="checkbox-label-Prod">
+                    <input type="checkbox" name="terceirizadoProd"> Terceirizado
+                </label>
+                <label class="checkbox-label-Prod">
+                    <input type="checkbox" name="normalProd"> Normal
+                </label>
+            </div>
+            <div id="nomeClienteProdu"></div>
+            <div class="dropdown-container-producao">
+                <label for="artefinalSelectProdu"></label>
+                <select id="artefinalSelectProdu" name="artefinalSelectProdu" class="rotated">
+                    <!-- A opção selecionada será adicionada aqui usando JavaScript -->
+                </select>
+            </div>
+            <div id="direita">
+                <img id="imagemDireita" src="">
+            </div>
+        </div>        
+        
+    </div>
+    <script type="text/javascript" src="script/script.js">
+    </script>
+    <script>
+        document.getElementById("meuFormulario").addEventListener("submit", function (event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            
+            // Execute código para registrar os dados no banco de dados (você precisa implementar isso)
+            // Você pode usar AJAX ou fazer uma solicitação POST em JavaScript
+            
+            // Após o registro bem-sucedido, abra a tela de impressão
+            window.print();
+        });
+    </script>
+</body>
+</html>

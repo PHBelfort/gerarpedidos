@@ -1,0 +1,256 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+#layout {
+    width: 28.7cm;
+    height: 20cm;
+    border: 1px solid #000;
+    background-image: url('img/bg_layout.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.113cm;
+}
+.div-controle,
+.div-producao {
+    width: 14.2cm;
+    height: 20cm;
+    background-color: transparent;
+    position: relative;
+}
+
+/* Estilos para o contêiner dos botões */
+.button-container {
+    display: flex; /* Usar flexbox para alinhar os botões lado a lado */
+    align-items: center; /* Alinhar verticalmente ao centro */
+    margin-top: 95px;
+}
+
+/* Estilos para o botão "Enviar" e "Layouts" */
+#botaoEnviar, .layouts-button {
+    display: inline-block;
+    width: 70px; /* Defina o tamanho desejado */
+    height: 24px; /* Defina a altura desejada */
+    background-color: #ff0000;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    /* Estilos de texto em comum */
+    font-family: Arial, Helvetica, sans-serif; /* Escolha uma fonte desejada */
+    font-size: 14px; /* Escolha o tamanho de fonte desejado */
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    line-height: 25px; /* Centraliza verticalmente o texto */
+    
+    /* Centralize o texto horizontalmente */
+    text-align: center;
+
+    /* Adicione margem direita para criar espaço entre os botões */
+    margin-right: 3px; 
+    transition: background-color 0.3s; /* Adiciona uma transição suave para a mudança de cor */
+}
+
+/* Estilizar o botão "Layouts" quando o mouse passar por cima */
+.layouts-button:hover {
+    background-color: #0056b3; /* Mude a cor para azul quando o mouse passar por cima */
+}
+
+/* Estilos para o botão "Enviar" quando o mouse passar por cima */
+#botaoEnviar:hover {
+    background-color: #0056b3; /* Mude a cor para azul quando o mouse passar por cima */
+}
+
+/* Estilos gerais */
+body {
+    display: none;
+}
+#layout, #layout * {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Estilos para impressão */
+@media print {
+    body {
+        display: initial;
+    }
+    #layout {
+        display: block;
+        width: 100%;
+        height: auto;
+        border: none;
+        background: none;
+    }
+    #layout * {
+        display: block;
+    }
+}
+
+/* Estilos para ocultar o botão Enviar durante a impressão */
+@media print {
+    #botaoEnviar {
+        display: none; /* Oculta o botão durante a impressão */
+    }
+
+    .layouts-button {
+        display: none;  /* Ocultar o botão "Layouts" durante a impressão */
+    }
+
+    #layout {
+            box-shadow: none; /* Remove a sombra durante a impressão */
+        }
+    
+}
+
+
+/* Estilos para impressão */
+@media print {
+    /* Oculta a seta no elemento select */
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding-right: 20px; /* Adicione algum espaço para acomodar o ícone da seta se necessário */
+    }
+    /* Define um fundo branco para simular um ícone de seta na impressão */
+    select::-ms-expand {
+      display: none;
+    }
+    select::after {
+      content: "\25BC"; /* Código Unicode para uma seta para baixo */
+      position: absolute;
+      top: 50%;
+      right: 10px; /* Posicione o ícone onde desejar */
+      transform: translateY(-50%);
+    }
+  }
+  
+
+.rotated {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    position: absolute;
+    left: 1%;
+    top: 19.7cm;
+    width: 120px; /* Ajuste a largura conforme necessário */
+    height: 28px; /* Ajuste a largura conforme necessário */
+    font-weight: bold;
+    font-size: 18px;
+    color: red;
+    border-color: #000;
+    text-align: center;
+}
+
+#data, #dataProdu {
+    position: absolute;
+    left: 10.5cm;
+    top: 3.4cm;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+    color: rgb(253, 16, 16);
+}
+
+.checkbox-container {
+    position: absolute;
+    top: 3.5cm;
+}
+.checkbox-label {
+    position: relative;
+    padding-left: 0.5cm;
+    font-size: 18px;
+}
+.checkbox-label:last-child, .checkbox-label-Prod:last-child {
+    padding-left: 0.1cm;
+}
+
+.checkbox-label-Prod {
+    position: relative;
+    padding-left: 0.5cm;
+    font-size: 18px;
+}
+
+#container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#esquerda, #direita {
+    width: 13.5cm;
+    height: 11.5cm;
+    position: absolute;
+    top: 4.2cm;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: transparent;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 2px dashed #ffffff;
+    z-index: 1;
+}
+#imagemDireita {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#esquerda {
+    border: 1px dashed #ffffff;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#nomeCliente, #nomeClienteProdu {
+    position: absolute;
+    left: 5.85cm;
+    top: 2.27cm;
+    width: 8.2cm;
+    height: 0.8cm;
+    padding: 0.0cm 0.0cm 0.0cm 0.0cm;
+    font-size: 23px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border: #fff;
+    background-color: #fff;
+    background: #fff;
+}
+
+#icon-img {
+    height: 80px;
+
+}
+
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Apply the animation to the icon-img element */
+#icon-img {
+    animation: zoomInOut 1s ease infinite; /* Adjust the duration and timing function as needed */
+}
+
+#text-icon-img {
+    font-style: italic;
+    font-size: 18px;
+
+}
